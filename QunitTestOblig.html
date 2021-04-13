@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.14.1.css">
+
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.14.1.js"></script>
+    <script src="GuessController.js"></script>
+  <script>
+    function add(a, b) {
+      return a + b;
+    }
+    let talletViTryktePå = 0;
+        let guessNumberText = "Trykk på et nr du tror er riktig!";
+        let number = getRandomNumber();
+    
+        function updateView(){}
+      
+
+      
+      QUnit.test('prøvPåNytt', function(assert) {
+          prøvPåNytt();
+        let detProgrammetLevererTilbake = talletViTryktePå;
+        let detteTrorJeg = "";
+        assert.equal(detProgrammetLevererTilbake,detteTrorJeg);
+
+      });
+      QUnit.test('guessNumberText', function(assert) {
+          enter();
+          talletViTryktePå = 1;
+          number = 5;
+        let detProgrammetLevererTilbake = guessNumberText;
+        let detteTrorJeg = "Du gjettet for lavt!";
+        assert.equal(detProgrammetLevererTilbake,detteTrorJeg);
+
+      });
+      QUnit.test('enter', function(assert) {
+          enter();
+          talletViTryktePå = 1;
+          number = 1;
+        let detProgrammetLevererTilbake = talletViTryktePå;
+        let detteTrorJeg = number;
+        assert.equal(detProgrammetLevererTilbake,detteTrorJeg);
+
+      });
+   
+
+  </script>
+</body>
